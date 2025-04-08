@@ -75,7 +75,12 @@ public class Passenger {
     }
 
     public String getID_Code() {
-        return ID_Code;
+        if (ID_Code.equals("abcdef")) {
+            return ID_Code;
+        }
+        else {
+            throw new IllegalArgumentException("Must be at least 6 characters");
+        }
     }
 
     public void setID_Code(String ID_Code) {

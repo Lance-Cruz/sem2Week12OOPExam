@@ -68,4 +68,18 @@ public class PassengerTest {
         assertEquals("Must be 18 or older", ex.getMessage());
    }
 
+   @Test
+    void getIDCodeSuccess(){
+        newPass.setID_Code("abcdef");
+        assertEquals("abcdef", newPass.getID_Code());
+   }
+
+   @Test
+    void getIDCodeFailure(){
+        newPass.setID_Code("abc");
+        Exception ex = assertThrows(IllegalArgumentException.class, () ->{
+            newPass.getID_Code();});
+        assertEquals("Must be at least 6 characters", ex.getMessage());
+   }
+
 }
