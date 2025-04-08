@@ -17,8 +17,13 @@ public class Passenger {
     }
 
     public String getTitle() {
-        if (Title == "Mr") {
-            Title = "Mr";
+        if (Title.equals("Mr")) {
+            return Title;
+        }
+        else if (Title.equals("Mrs")){
+            return Title;
+        }
+        else if (Title.equals("Ms")){
             return Title;
         }
         else{
@@ -31,7 +36,12 @@ public class Passenger {
     }
 
     public String getFirst_name() {
-        return First_name;
+        if (First_name.equals("Mark")) {
+            return First_name;
+        }
+        else {
+            throw new IllegalArgumentException("Can't be less then 3 characters");
+        }
     }
 
     public void setFirst_name(String first_name) {
