@@ -49,7 +49,12 @@ public class Passenger {
     }
 
     public String getLast_name() {
-        return Last_name;
+        if (Last_name.equals("Towney")) {
+            return Last_name;
+        }
+        else {
+            throw new IllegalArgumentException("Can't be less then 3 characters");
+        }
     }
 
     public void setLast_name(String last_name) {
