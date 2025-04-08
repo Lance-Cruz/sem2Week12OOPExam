@@ -40,4 +40,19 @@ public class PassengerTest {
         assertEquals("Can't be less then 3 characters", ex.getMessage());
     }
 
+    @Test
+    void getLastNameSuccess(){
+        newPass.setLast_name("Towney");
+        assertEquals("Towney", newPass.getLast_name());
+    }
+
+   @Test
+    void getLastNameFailure(){
+        newPass.setLast_name("ab");
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> {
+            newPass.getLast_name();});
+       assertEquals("Can't be less then 3 characters", ex.getMessage());
+   }
+
+
 }
