@@ -54,5 +54,18 @@ public class PassengerTest {
        assertEquals("Can't be less then 3 characters", ex.getMessage());
    }
 
+   @Test
+    void getAgeSuccess(){
+        newPass.setAge(19);
+        assertEquals(19, newPass.getAge());
+   }
+
+   @Test
+    void getAgeFailure(){
+        newPass.setAge(10);
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> {
+            newPass.getAge();});
+        assertEquals("Must be 18 or older", ex.getMessage());
+   }
 
 }

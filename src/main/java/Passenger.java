@@ -62,7 +62,12 @@ public class Passenger {
     }
 
     public int getAge() {
-        return Age;
+        if (Age >= 18){
+         return Age;
+        }
+        else {
+            throw new IllegalArgumentException("Must be 18 or older");
+        }
     }
 
     public void setAge(int age) {
